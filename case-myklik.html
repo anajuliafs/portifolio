@@ -106,8 +106,8 @@
     .case-section { padding: 100px 48px; }
     .case-section + .case-section { border-top: 1px solid var(--line); }
     .section-header { display: grid; grid-template-columns: 200px 1fr; gap: 60px; margin-bottom: 64px; }
-    .section-num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em; color: var(--fg-dim); padding-top: 6px; }
-    .section-title { font-family: var(--font-display); font-size: clamp(36px, 4vw, 56px); font-weight: 300; color: var(--fg); }
+    .section-num { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.2em; color: var(--fg-dim); padding-top: 6px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(42px, 4.5vw, 64px); font-weight: 300; color: var(--fg); }
     .section-title em { font-style: italic; color: var(--accent2); }
     .section-body { display: grid; grid-template-columns: 200px 1fr; gap: 60px; }
     .section-body-text { font-family: var(--font-mono); font-size: 13.5px; color: var(--fg-dim); line-height: 2.1; letter-spacing: 0.04em; }
@@ -141,7 +141,7 @@
     .img-placeholder-label { position: relative; z-index: 1; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); opacity: 0.5; }
     .h-200 { height: 200px; } .h-300 { height: 300px; } .h-400 { height: 400px; } .h-500 { height: 500px; }
 
-    /* MyKlik specific mockup — low-code builder UI */
+    /* MyKlik mockup image */
     .builder-mockup {
       background: var(--bg2);
       border-top: 1px solid var(--line);
@@ -150,57 +150,6 @@
       display: flex;
       justify-content: center;
     }
-    .mk-app {
-      width: 100%;
-      max-width: 960px;
-      background: #f4f2ef;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 60px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
-      display: grid;
-      grid-template-columns: 56px 220px 1fr 220px;
-      min-height: 440px;
-    }
-    .mk-iconbar { background: #1a1612; display: flex; flex-direction: column; align-items: center; padding: 16px 0; gap: 4px; }
-    .mk-icon { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 14px; color: rgba(255,255,255,0.35); cursor: pointer; transition: background 0.2s; }
-    .mk-icon.active { background: rgba(196,106,42,0.25); color: rgba(255,255,255,0.8); }
-    .mk-icon-sep { width: 28px; height: 1px; background: rgba(255,255,255,0.08); margin: 6px 0; }
-
-    .mk-sidebar { background: #fff; border-right: 1px solid #e8e5e0; overflow: hidden; }
-    .mk-sidebar-header { padding: 14px 16px; background: #f9f7f5; border-bottom: 1px solid #e8e5e0; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: #666; }
-    .mk-sidebar-section { padding: 8px 0; border-bottom: 1px solid #f0ede8; }
-    .mk-sidebar-item { padding: 9px 16px; display: flex; align-items: center; gap: 8px; cursor: pointer; }
-    .mk-sidebar-item:hover { background: #f5f2ee; }
-    .mk-sidebar-item.active { background: #fdf0e8; border-right: 2px solid #c46a2a; }
-    .mk-sidebar-dot { width: 8px; height: 8px; border-radius: 2px; background: #d0cbc4; flex-shrink: 0; }
-    .mk-sidebar-dot.orange { background: #c46a2a; }
-    .mk-sidebar-dot.blue { background: #4a7cad; }
-    .mk-sidebar-dot.green { background: #4a9c7f; }
-    .mk-sidebar-text { font-family: var(--font-mono); font-size: 11px; color: #444; }
-
-    .mk-canvas { background: #eceae6; position: relative; display: flex; align-items: center; justify-content: center; padding: 24px; }
-    .mk-grid-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(0,0,0,0.08) 1px, transparent 1px); background-size: 24px 24px; }
-    .mk-widget { position: relative; z-index: 1; width: 100%; background: #fff; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1), 0 0 0 2px #c46a2a; padding: 20px; }
-    .mk-widget-handle { width: 100%; height: 28px; background: #f9f7f5; border-radius: 4px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; }
-    .mk-widget-handle-title { font-family: var(--font-mono); font-size: 10px; color: #888; }
-    .mk-widget-handle-dots { display: flex; gap: 4px; }
-    .mk-widget-handle-dot { width: 5px; height: 5px; border-radius: 50%; background: #ccc; }
-    .mk-table { width: 100%; border-collapse: collapse; }
-    .mk-table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #999; padding: 8px; text-align: left; border-bottom: 1px solid #f0ede8; }
-    .mk-table td { font-family: var(--font-mono); font-size: 11px; color: #444; padding: 9px 8px; border-bottom: 1px solid #f5f3f0; }
-    .mk-table tr:last-child td { border-bottom: none; }
-    .mk-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 9px; letter-spacing: 0.08em; }
-    .mk-badge.green { background: #e8f5f0; color: #2d7a5f; }
-    .mk-badge.orange { background: #fdf0e8; color: #8a4010; }
-    .mk-badge.blue { background: #e8f0f5; color: #2d5a7a; }
-
-    .mk-props { background: #fff; border-left: 1px solid #e8e5e0; overflow: hidden; }
-    .mk-props-header { padding: 14px 16px; background: #f9f7f5; border-bottom: 1px solid #e8e5e0; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: #666; }
-    .mk-prop { padding: 12px 16px; border-bottom: 1px solid #f0ede8; }
-    .mk-prop-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #aaa; margin-bottom: 6px; }
-    .mk-prop-value { font-family: var(--font-mono); font-size: 11px; color: #333; background: #f5f3f0; border: 1px solid #e8e5e0; border-radius: 4px; padding: 6px 10px; }
-    .mk-prop-color { display: flex; gap: 6px; }
-    .mk-color-swatch { width: 20px; height: 20px; border-radius: 4px; border: 1px solid #e0ddd8; }
 
     /* Principle cards */
     .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
@@ -208,6 +157,50 @@
     .principle-num { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--case-color); margin-bottom: 20px; }
     .principle-title { font-family: var(--font-sans); font-size: 18px; font-weight: 700; color: var(--fg); margin-bottom: 16px; }
     .principle-text { font-family: var(--font-mono); font-size: 13px; color: var(--fg-dim); line-height: 1.8; }
+
+    /* Heuristic review */
+    .heuristic-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .heuristic-item { background: var(--bg); padding: 36px 32px; border-left: 2px solid transparent; }
+    .heuristic-critical { border-left-color: #c44a2a; }
+    .heuristic-major    { border-left-color: #c49a2a; }
+    .heuristic-minor    { border-left-color: #5a7a9a; }
+    .heuristic-severity { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; }
+    .heuristic-critical .heuristic-severity { color: #c44a2a; }
+    .heuristic-major    .heuristic-severity { color: #c49a2a; }
+    .heuristic-minor    .heuristic-severity { color: #5a7a9a; }
+    .heuristic-rule { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--fg); margin-bottom: 12px; letter-spacing: 0.02em; }
+    .heuristic-finding { font-family: var(--font-mono); font-size: 12.5px; color: var(--fg-dim); line-height: 1.9; }
+
+    /* Full-width image with lightbox hint */
+    .img-full { padding: 0 48px 60px; }
+    .img-lightbox-link { display: block; position: relative; text-decoration: none; }
+    .img-lightbox-link:hover img { opacity: 0.9; }
+    .img-lightbox-hint { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); opacity: 0.5; margin-top: 12px; transition: opacity 0.2s; }
+    .img-lightbox-link:hover .img-lightbox-hint { opacity: 0.9; }
+
+    /* Carousel */
+    .carousel { position: relative; overflow: hidden; }
+    .carousel-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); will-change: transform; }
+    .carousel-slide { flex: 0 0 100%; position: relative; }
+    .carousel-slide img { width: 100%; display: block; border-radius: 4px; border: 1px solid var(--line); max-height: 560px; object-fit: contain; background: var(--bg3); }
+    .carousel-caption { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); opacity: 0.5; margin-top: 12px; }
+    .carousel-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 28px; }
+    .carousel-btn { background: none; border: 1px solid var(--line); color: var(--fg-dim); font-family: var(--font-mono); font-size: 14px; width: 40px; height: 40px; cursor: pointer; transition: border-color 0.2s, color 0.2s; flex-shrink: 0; }
+    .carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .carousel-dots { display: flex; gap: 8px; align-items: center; }
+    .carousel-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--fg-dim); opacity: 0.25; cursor: pointer; transition: opacity 0.2s, transform 0.2s; border: none; padding: 0; }
+    .carousel-dot.active { opacity: 1; background: var(--accent); transform: scale(1.4); }
+    .carousel-hint { display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--fg-dim); opacity: 0.4; margin-top: 14px; text-align: right; }
+
+    /* Carousel lightbox */
+    #carouselLightbox { display: none; position: fixed; inset: 0; z-index: 9990; align-items: center; justify-content: center; padding: 40px; }
+    #carouselLightbox.cl-open { display: flex; }
+    .cl-backdrop { position: absolute; inset: 0; background: rgba(10,10,9,0.92); cursor: zoom-out; }
+    .cl-img { position: relative; max-width: 100%; max-height: 90vh; object-fit: contain; border-radius: 4px; box-shadow: 0 40px 80px rgba(0,0,0,0.8); z-index: 1; }
+    .cl-close { position: absolute; top: 24px; right: 32px; background: none; border: 1px solid var(--line); color: var(--fg-dim); font-size: 14px; width: 36px; height: 36px; cursor: pointer; z-index: 2; transition: border-color 0.2s, color 0.2s; font-family: var(--font-mono); }
+    .cl-close:hover { border-color: var(--accent); color: var(--accent); }
+
+    @media (max-width: 768px) { .heuristic-grid { grid-template-columns: 1fr; } .img-full { padding: 0 24px 40px; } }
 
     .back-home { border-top: 1px solid var(--line); padding: 80px 48px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: inherit; background: var(--bg2); transition: background 0.4s; }
     .back-home:hover { background: var(--bg3); }
@@ -235,8 +228,6 @@
       .img-strip { padding: 0 24px 40px; }
       .img-strip.cols-2, .img-strip.cols-3, .img-strip.cols-12 { grid-template-columns: 1fr; }
       .builder-mockup { padding: 40px 24px; }
-      .mk-app { grid-template-columns: 1fr; }
-      .mk-iconbar, .mk-sidebar, .mk-props { display: none; }
       .back-home { padding: 60px 24px; flex-direction: column; align-items: flex-start; gap: 32px; }
       footer { padding: 20px 24px; }
       .case-hero-index { display: none; }
@@ -294,11 +285,15 @@
       <div class="case-hero-meta">
         <div class="meta-group">
           <span class="meta-label">Role</span>
-          <span class="meta-value">UX Designer — End-to-end</span>
+          <span class="meta-value">Research · UI · User Testing · Prototyping</span>
+        </div>
+        <div class="meta-group">
+          <span class="meta-label">Client</span>
+          <span class="meta-value">Midas Tech</span>
         </div>
         <div class="meta-group">
           <span class="meta-label">Type</span>
-          <span class="meta-value">Low-code Platform</span>
+          <span class="meta-value">Low-code / No-code Platform</span>
         </div>
         <div class="meta-group">
           <span class="meta-label">Platform</span>
@@ -306,7 +301,7 @@
         </div>
         <div class="meta-group">
           <span class="meta-label">Year</span>
-          <span class="meta-value">2023</span>
+          <span class="meta-value">2024</span>
         </div>
       </div>
     </div>
@@ -319,140 +314,131 @@
   <div class="overview-band reveal">
     <div class="overview-label">Overview</div>
     <p class="overview-text">
-      End-to-end design of a <em>low-code platform</em> for creating, maintaining and managing database applications — enabling non-technical teams to build custom internal tools without writing a single line of code.
+      End-to-end redesign of a <em>low-code / no-code platform</em> that allows users to build their own systems based on databases — with the goal of making both the application-building process and database management as intuitive as possible for non-technical teams.
     </p>
   </div>
 
   <!-- Mockup -->
   <div class="builder-mockup reveal">
-    <div class="mk-app">
-      <div class="mk-iconbar">
-        <div class="mk-icon active">⊞</div>
-        <div class="mk-icon">⛁</div>
-        <div class="mk-icon-sep"></div>
-        <div class="mk-icon">⚙</div>
-        <div class="mk-icon">🔗</div>
-        <div class="mk-icon-sep"></div>
-        <div class="mk-icon">◻</div>
-      </div>
-      <div class="mk-sidebar">
-        <div class="mk-sidebar-header">Components</div>
-        <div class="mk-sidebar-section">
-          <div class="mk-sidebar-item active"><div class="mk-sidebar-dot orange"></div><div class="mk-sidebar-text">Table View</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot blue"></div><div class="mk-sidebar-text">Form</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot green"></div><div class="mk-sidebar-text">Chart</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot"></div><div class="mk-sidebar-text">Button</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot"></div><div class="mk-sidebar-text">Card Grid</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot"></div><div class="mk-sidebar-text">Filter Bar</div></div>
-        </div>
-        <div class="mk-sidebar-section">
-          <div class="mk-sidebar-header" style="background:none;border:none;padding-top:8px;">Data Sources</div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot blue"></div><div class="mk-sidebar-text">Customers DB</div></div>
-          <div class="mk-sidebar-item"><div class="mk-sidebar-dot green"></div><div class="mk-sidebar-text">Orders DB</div></div>
-        </div>
-      </div>
-      <div class="mk-canvas">
-        <div class="mk-grid-bg"></div>
-        <div class="mk-widget">
-          <div class="mk-widget-handle">
-            <span class="mk-widget-handle-title">Customers Table</span>
-            <div class="mk-widget-handle-dots"><div class="mk-widget-handle-dot"></div><div class="mk-widget-handle-dot"></div><div class="mk-widget-handle-dot"></div></div>
-          </div>
-          <table class="mk-table">
-            <thead>
-              <tr><th>Name</th><th>Email</th><th>Status</th><th>Value</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Maria Silva</td><td>maria@co.com</td><td><span class="mk-badge green">Active</span></td><td>R$ 4.200</td></tr>
-              <tr><td>João Costa</td><td>joao@co.com</td><td><span class="mk-badge orange">Pending</span></td><td>R$ 1.800</td></tr>
-              <tr><td>Ana Lima</td><td>ana@co.com</td><td><span class="mk-badge blue">Trial</span></td><td>R$ 900</td></tr>
-              <tr><td>Carlos Melo</td><td>carlos@co.com</td><td><span class="mk-badge green">Active</span></td><td>R$ 7.500</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="mk-props">
-        <div class="mk-props-header">Properties</div>
-        <div class="mk-prop">
-          <div class="mk-prop-label">Label</div>
-          <div class="mk-prop-value">Customers Table</div>
-        </div>
-        <div class="mk-prop">
-          <div class="mk-prop-label">Data Source</div>
-          <div class="mk-prop-value">Customers DB</div>
-        </div>
-        <div class="mk-prop">
-          <div class="mk-prop-label">Accent Color</div>
-          <div class="mk-prop-color">
-            <div class="mk-color-swatch" style="background:#c46a2a"></div>
-            <div class="mk-color-swatch" style="background:#4a7cad"></div>
-            <div class="mk-color-swatch" style="background:#4a9c7f"></div>
-          </div>
-        </div>
-        <div class="mk-prop">
-          <div class="mk-prop-label">Rows per page</div>
-          <div class="mk-prop-value">20</div>
-        </div>
-      </div>
-    </div>
+    <img
+      src="https://res.cloudinary.com/docseigvg/image/upload/v1772762350/myklik-management-access_yuzxok.png"
+      alt="MyKlik — Visão geral do projeto com estatísticas e gráficos de acesso"
+      style="width:100%; max-width:960px; border-radius:10px; display:block; box-shadow:0 60px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);"
+    >
   </div>
 
   <!-- Challenge -->
   <div class="case-section reveal">
     <div class="section-header">
       <div class="section-num">01 — Challenge</div>
-      <h2 class="section-title">Power without<br><em>complexity</em></h2>
+      <h2 class="section-title">A system <em>no one</em><br>could use alone</h2>
     </div>
     <div class="section-body">
       <div></div>
       <div>
         <div class="section-body-text">
-          <p>MyKlik was conceived as a tool for operations and business teams — people who know exactly what data they need to manage, but who aren't developers. The challenge was massive: how do you design a platform powerful enough to replace custom internal tools, yet simple enough that a non-technical person can use it confidently on day one?</p>
-          <p>Early prototypes leaned too heavily on developer metaphors — schemas, queries, relations — which created anxiety in user testing with non-technical participants. Meanwhile, a fully simplified version frustrated power users who needed fine-grained control.</p>
-          <p>The solution required <strong>progressive disclosure</strong>: a design that meets beginners where they are, while always offering more depth for those who want it — without one group compromising the experience of the other.</p>
+          <p>The existing platform had significant usability problems. The interface lacked clear instructions, making it inaccessible to anyone without prior training — and even the project owner struggled to complete certain tasks without external support.</p>
+          <p>My first step was to review the current solution and <strong>map the key pain points</strong> in the database creation process. A usability test with a first-time user quickly confirmed what the heuristic review suggested: the entire workflow was unclear, from onboarding to publishing a first application.</p>
+          <p>Three main flows structured the redesign: <strong>system access and onboarding</strong>, <strong>database creation and management</strong>, and the <strong>Studio</strong> — where the application interface is actually built. Each flow required a different level of complexity, but all shared the same fundamental problem: the product spoke in technical language to non-technical people.</p>
         </div>
         <div class="insight-block" style="margin-top:40px;">
-          <div class="insight-label">Design Principle</div>
-          <p class="insight-text">"The platform should feel like <em>a spreadsheet with superpowers</em>, not a database with a friendly face."</p>
+          <div class="insight-label">Key Finding — Usability Test</div>
+          <p class="insight-text">"She needs training to understand each button and what it does — <em>the platform feels easy to navigate, but impossible to learn alone.</em>"</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Images -->
-  <div class="img-strip cols-12 reveal" style="padding-top:20px;">
-    <div class="img-placeholder h-400"><span class="img-placeholder-label">Onboarding Flow</span></div>
-    <div class="img-placeholder h-400"><span class="img-placeholder-label">App Builder Canvas</span></div>
+  <!-- Heuristic Review -->
+  <div class="case-section reveal" style="background: var(--bg2); border-top: 1px solid var(--line);">
+    <div class="section-header">
+      <div class="section-num">01.1 — Heuristic Review</div>
+      <h2 class="section-title">Where the<br>interface <em>failed</em></h2>
+    </div>
+    <div class="section-body" style="margin-bottom: 56px;">
+      <div></div>
+      <div class="section-body-text">
+        <p>A usability test was conducted with a company employee who had never used the system before. Her session was recorded and the transcript analysed against Nielsen's 10 heuristics. The findings confirmed <strong>critical violations across 5 heuristics</strong> — all pointing to the same root cause: the interface assumed knowledge the user didn't have.</p>
+      </div>
+    </div>
+    <div class="heuristic-grid reveal">
+      <div class="heuristic-item heuristic-critical">
+        <div class="heuristic-severity">Critical</div>
+        <div class="heuristic-rule">H1 — Visibility of System Status</div>
+        <div class="heuristic-finding">The user had no indication of where she was in the flow or what step came next. She repeatedly asked "how do I proceed to the next step?" — the system offered no progress cues or confirmation of completed actions.</div>
+      </div>
+      <div class="heuristic-item heuristic-critical">
+        <div class="heuristic-severity">Critical</div>
+        <div class="heuristic-rule">H6 — Recognition Rather Than Recall</div>
+        <div class="heuristic-finding">Every button required prior knowledge to interpret. The user needed training before she could understand what each control did — nothing was self-evident. Icons lacked labels, and actions were not described in context.</div>
+      </div>
+      <div class="heuristic-item heuristic-major">
+        <div class="heuristic-severity">Major</div>
+        <div class="heuristic-rule">H2 — Match Between System and Real World</div>
+        <div class="heuristic-finding">The interface used technical terminology unfamiliar to non-developer users. The user struggled to understand the purpose of screens and fields because the language did not match how she thought about her own work.</div>
+      </div>
+      <div class="heuristic-item heuristic-major">
+        <div class="heuristic-severity">Major</div>
+        <div class="heuristic-rule">H3 — User Control and Freedom</div>
+        <div class="heuristic-finding">The user did not know how to close open windows and expected them to dismiss when clicking elsewhere — a standard interaction pattern that was not supported. Dead ends were frequent, with no clear escape route.</div>
+      </div>
+      <div class="heuristic-item heuristic-minor">
+        <div class="heuristic-severity">Moderate</div>
+        <div class="heuristic-rule">H4 — Consistency and Standards</div>
+        <div class="heuristic-finding">Interactions varied across sections without clear reason. Some panels closed on outside-click, others did not. The same action had different affordances in different contexts, breaking the user's mental model of how the system behaved.</div>
+      </div>
+      <div class="heuristic-item heuristic-minor">
+        <div class="heuristic-severity">Moderate</div>
+        <div class="heuristic-rule">H10 — Help and Documentation</div>
+        <div class="heuristic-finding">No inline guidance, tooltips, or contextual help existed anywhere in the platform. The user's only recourse when stuck was to ask someone — making independent use of the system effectively impossible for new users.</div>
+      </div>
+    </div>
+
+    <!-- Image — Pain point mapping -->
+    <div class="img-full reveal" style="padding: 48px 0 0;">
+      <a href="https://res.cloudinary.com/docseigvg/image/upload/v1772845630/An%C3%A1lise_-_Requisitos_oa9jfv.png"
+         target="_blank"
+         class="img-lightbox-link"
+         title="Clique para ampliar">
+        <img
+          src="https://res.cloudinary.com/docseigvg/image/upload/v1772845630/An%C3%A1lise_-_Requisitos_oa9jfv.png"
+          alt="Análise de requisitos — mapeamento de pain points e fluxo atual"
+          style="width:100%; display:block; border-radius:4px; border: 1px solid var(--line);"
+        >
+        <span class="img-lightbox-hint"><span style="opacity:1; color: var(--fg-dim);">Requirements analysis</span><span style="margin: 0 10px; opacity:0.3;">—</span>↗ Click to enlarge</span>
+      </a>
+    </div>
   </div>
 
   <!-- Process -->
   <div class="case-section" style="background: var(--bg2);">
     <div class="section-header reveal">
       <div class="section-num">02 — Process</div>
-      <h2 class="section-title">Research to<br><em>release</em></h2>
+      <h2 class="section-title">From <em>confusion</em><br>to clarity</h2>
     </div>
     <div class="process-grid reveal">
       <div class="process-step" data-num="1">
         <div class="process-step-label">Discovery</div>
-        <div class="process-step-title">User Archetypes</div>
-        <div class="process-step-text">Mapped 3 distinct user archetypes — the Operator, the Analyst, and the Admin — each with different goals, vocabularies, and tolerance for complexity.</div>
+        <div class="process-step-title">Heuristic Review + Interview</div>
+        <div class="process-step-text">Reviewed the existing interface and conducted an in-depth interview with a company employee who had never used the system before — identifying which interactions were intuitive and which caused friction.</div>
       </div>
       <div class="process-step" data-num="2">
-        <div class="process-step-label">Benchmarks</div>
-        <div class="process-step-title">Market Analysis</div>
-        <div class="process-step-text">Deep analysis of Airtable, Notion, Retool, and Appsmith — identifying the design patterns that work across skill levels and those that only serve developers.</div>
+        <div class="process-step-label">Define</div>
+        <div class="process-step-title">3 Core Flows</div>
+        <div class="process-step-text">Structured the product around three main journeys: system access and onboarding, database creation and management, and the Studio — where the app interface is assembled. Each required a tailored approach.</div>
       </div>
       <div class="process-step" data-num="3">
-        <div class="process-step-label">Systems</div>
-        <div class="process-step-title">Component Library</div>
-        <div class="process-step-text">Designed a modular component system of 40+ UI primitives — tables, forms, charts, filters — each configurable via a property panel rather than code.</div>
+        <div class="process-step-label">Benchmarks</div>
+        <div class="process-step-title">Market & Pattern Analysis</div>
+        <div class="process-step-text">Studied how comparable platforms — CRM tools, spreadsheet software, app builders — structured their interfaces. The goal was to identify familiar interaction patterns that could reduce the learning curve without oversimplifying.</div>
       </div>
       <div class="process-step" data-num="4">
-        <div class="process-step-label">Iteration</div>
-        <div class="process-step-title">5 Testing Rounds</div>
-        <div class="process-step-text">Ran 5 rounds of usability testing across beta users from operations, finance, and HR teams — iterating on vocabulary, onboarding, and the drag-and-drop builder.</div>
+        <div class="process-step-label">Design</div>
+        <div class="process-step-title">High-Fidelity Screens</div>
+        <div class="process-step-text">Translated the research into detailed high-fidelity designs — applying real UI elements, color, and typography. Covered profile settings, subscription management, app customization, and the workflow automation editor.</div>
       </div>
     </div>
+
   </div>
 
   <!-- Design Principles -->
@@ -461,24 +447,58 @@
       <div class="section-num">03 — Solution</div>
       <h2 class="section-title">Design<br><em>principles</em></h2>
     </div>
-    <div class="principles-grid reveal">
-      <div class="principle-card" data-icon="◼">
-        <div class="principle-num">Principle 01</div>
-        <div class="principle-title">Show, don't configure</div>
-        <div class="principle-text">Every action has a visible, immediate result. Changes to components are reflected live on the canvas — no "preview" mode required. Confidence comes from seeing.</div>
-      </div>
-      <div class="principle-card" data-icon="⌥">
-        <div class="principle-num">Principle 02</div>
-        <div class="principle-title">Depth on demand</div>
-        <div class="principle-text">Advanced options exist but are never shown by default. A beginner and an expert see the same interface — but the expert knows where to look for more control.</div>
-      </div>
-      <div class="principle-card" data-icon="✦">
-        <div class="principle-num">Principle 03</div>
-        <div class="principle-title">Business language</div>
-        <div class="principle-text">We use business terms, not technical ones. "Connect your data" instead of "define schema." "Share with team" instead of "set permissions." Language shapes confidence.</div>
+
+    <div class="section-body" style="margin-bottom: 64px;">
+      <div></div>
+      <div class="section-body-text">
+        <p>The final phase focused on the Studio — a builder environment where users assemble the application interface by adding inputs, buttons, forms, and other UI elements. The most complex challenge was designing the <strong>workflow automation editor</strong>: a system where users configure trigger-based actions without writing code.</p>
+        <p>For example, if a user fills in a field and leaves it blank, the system should automatically create an account and send a password. To make this approachable, I drew on conditional logic patterns already familiar from other contexts — mapping them to visual, language-based rules using <strong>if/else</strong> statements rather than code syntax.</p>
       </div>
     </div>
+
+    <div class="principles-grid reveal">
+      <div class="principle-card">
+        <div class="principle-num">Principle 01</div>
+        <div class="principle-title">Familiar patterns first</div>
+        <div class="principle-text">The interface was modelled after dashboards users already know — CRM tools, spreadsheet software. Familiarity reduces anxiety. When in doubt, design for recognition, not learning.</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">Principle 02</div>
+        <div class="principle-title">Structure before visual</div>
+        <div class="principle-text">Core flows and information architecture were defined before any high-fidelity work began. Usability consistency with the product's principles always came before aesthetics.</div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">Principle 03</div>
+        <div class="principle-title">Logic without code</div>
+        <div class="principle-text">Workflow automation was designed around conditional rules expressed in plain language — if/else statements anyone can read — making complex behaviour accessible to non-technical users.</div>
+      </div>
+    </div>
+
+    <!-- Studio images -->
+    <div class="img-strip cols-2 reveal" style="padding: 48px 0 0;">
+      <a href="https://res.cloudinary.com/docseigvg/image/upload/v1772846659/Input_form_oteu25.png"
+         target="_blank" class="img-lightbox-link">
+        <img
+          src="https://res.cloudinary.com/docseigvg/image/upload/v1772846659/Input_form_oteu25.png"
+          alt="MyKlik — App Builder interface, input form"
+          style="width:100%; display:block; border-radius:4px; border: 1px solid var(--line);"
+        >
+        <span class="img-lightbox-hint"><span style="opacity:1; color: var(--fg-dim);">Input form builder</span><span style="margin: 0 10px; opacity:0.3;">—</span>↗ Click to enlarge</span>
+      </a>
+      <a href="https://res.cloudinary.com/docseigvg/image/upload/v1772845284/Card_vkkdub.png"
+         target="_blank" class="img-lightbox-link">
+        <img
+          src="https://res.cloudinary.com/docseigvg/image/upload/v1772845284/Card_vkkdub.png"
+          alt="MyKlik — Workflow automation editor, conditional rules"
+          style="width:100%; display:block; border-radius:4px; border: 1px solid var(--line);"
+        >
+        <span class="img-lightbox-hint"><span style="opacity:1; color: var(--fg-dim);">Card component</span><span style="margin: 0 10px; opacity:0.3;">—</span>↗ Click to enlarge</span>
+      </a>
+    </div>
   </div>
+
+
+
 
 
 
@@ -486,20 +506,75 @@
   <div class="case-section" style="background: var(--bg2);">
     <div class="section-header reveal">
       <div class="section-num">04 — Results</div>
-      <h2 class="section-title">The<br><em>impact</em></h2>
+      <h2 class="section-title">The<br><em>outcome</em></h2>
     </div>
-    <div class="results-grid reveal">
-      <div class="result-item">
-        <div class="result-num"><span>8</span>min</div>
-        <div class="result-label">Average time to create<br>first app from scratch</div>
+
+    <div class="section-body reveal">
+      <div></div>
+      <div>
+        <div class="section-body-text">
+          <p>Despite the constraints — the client chose not to include real data in the onboarding and opted against an interactive prototype — the high-fidelity screens delivered a <strong>solid foundation for implementation</strong>.</p>
+          <p>By aligning the interface with familiar patterns and industry standards, the redesign made the system more approachable to users with varying levels of technical expertise. The project was successfully approved, and its implementation provided a more intuitive and structured experience for building applications.</p>
+        </div>
+        <div class="insight-block" style="margin-top:40px;">
+          <div class="insight-label">Takeaway</div>
+          <p class="insight-text">"Designing for non-technical users isn't about removing power — it's about <em>removing the fear</em> of using it."</p>
+        </div>
       </div>
+    </div>
+
+    <!-- Final UI Carousel -->
+    <div class="carousel reveal" style="margin-top: 80px;">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772846659/Card-1_mybdta.png" alt="MyKlik — Card component variant">
+          <span class="carousel-caption">Card variant</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845574/Table_gjljyu.png" alt="MyKlik — Table view">
+          <span class="carousel-caption">Table view</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845568/myklik-management-access_meewyc.png" alt="MyKlik — Access management">
+          <span class="carousel-caption">Access management</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845565/myklik-builder-canvas_novlze.png" alt="MyKlik — Builder canvas">
+          <span class="carousel-caption">Builder canvas</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845311/Input_form-1_oiwsyu.png" alt="MyKlik — Input form">
+          <span class="carousel-caption">Input form</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845284/Desktop07_vvrqsq.png" alt="MyKlik — Desktop screen 07">
+          <span class="carousel-caption">Onboarding flow</span>
+        </div>
+        <div class="carousel-slide">
+          <img src="https://res.cloudinary.com/docseigvg/image/upload/v1772845284/Desktop04_o9bmxc.png" alt="MyKlik — Desktop screen 04">
+          <span class="carousel-caption">Project overview</span>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carouselPrev" aria-label="Previous">←</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="carouselNext" aria-label="Next">→</button>
+      </div>
+      <span class="carousel-hint">Hover to pause · Click image to enlarge</span>
+    </div>
+
+    <div class="results-grid reveal" style="margin-top: 80px;">
       <div class="result-item">
-        <div class="result-num">+<span>85</span>%</div>
-        <div class="result-label">Non-technical user<br>success rate in testing</div>
+        <div class="result-num"><span>3</span></div>
+        <div class="result-label">Core flows redesigned<br>end-to-end</div>
       </div>
       <div class="result-item">
         <div class="result-num"><span>40</span>+</div>
-        <div class="result-label">UI components designed<br>and documented</div>
+        <div class="result-label">High-fidelity screens<br>designed and delivered</div>
+      </div>
+      <div class="result-item">
+        <div class="result-num"><span>✓</span></div>
+        <div class="result-label">Project approved and<br>handed off for implementation</div>
       </div>
     </div>
   </div>
@@ -532,6 +607,86 @@
     window.addEventListener('scroll', function() {
       navEl.classList.toggle('scrolled', window.scrollY > 40);
     });
+
+    // CAROUSEL
+    (function() {
+      var track = document.getElementById('carouselTrack');
+      if (!track) return;
+      var slides = track.querySelectorAll('.carousel-slide');
+      var dotsContainer = document.getElementById('carouselDots');
+      var total = slides.length;
+      var current = 0;
+      var timer = null;
+
+      slides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.addEventListener('click', function() { go(i); });
+        dotsContainer.appendChild(dot);
+      });
+
+      function go(n) {
+        current = (n + total) % total;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        dotsContainer.querySelectorAll('.carousel-dot').forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function startAuto() {
+        timer = setInterval(function() { go(current + 1); }, 3000);
+      }
+
+      function stopAuto() {
+        clearInterval(timer);
+      }
+
+      document.getElementById('carouselPrev').addEventListener('click', function() { go(current - 1); });
+      document.getElementById('carouselNext').addEventListener('click', function() { go(current + 1); });
+
+      // Pause on hover
+      var carouselEl = track.closest('.carousel');
+      carouselEl.addEventListener('mouseenter', stopAuto);
+      carouselEl.addEventListener('mouseleave', startAuto);
+
+      // Swipe support
+      var startX = 0;
+      track.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+      track.addEventListener('touchend', function(e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) go(diff > 0 ? current + 1 : current - 1);
+        startAuto();
+      });
+
+      // Lightbox
+      var overlay = document.createElement('div');
+      overlay.id = 'carouselLightbox';
+      overlay.innerHTML = '<div class="cl-backdrop"></div><img class="cl-img"><button class="cl-close">✕</button>';
+      document.body.appendChild(overlay);
+      var clImg = overlay.querySelector('.cl-img');
+
+      slides.forEach(function(slide) {
+        var img = slide.querySelector('img');
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+          clImg.src = img.src;
+          overlay.classList.add('cl-open');
+          stopAuto();
+        });
+      });
+
+      function closeLightbox() {
+        overlay.classList.remove('cl-open');
+        startAuto();
+      }
+
+      overlay.querySelector('.cl-backdrop').addEventListener('click', closeLightbox);
+      overlay.querySelector('.cl-close').addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+      startAuto();
+    })();
   </script>
   </div><!-- /.page-wrap -->
 </body>

@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ana Julia Figueiredo — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F5F2ED;
+    --ink: #1A1814;
+    --muted: #7A7468;
+    --accent: #C4622D;
+    --light-line: #DDD8D0;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+    --sans: 'Syne', sans-serif;
+  }
+
+  html { font-size: 17px; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: .5;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 48px 80px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    padding: 72px 0 48px;
+    border-bottom: 1px solid var(--light-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    animation: fadeUp .8s ease both;
+  }
+
+  .header-label {
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--accent);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    line-height: .95;
+    letter-spacing: -.03em;
+    color: var(--ink);
+  }
+
+  h1 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+    display: block;
+    font-size: 1.15em;
+    line-height: 1;
+  }
+
+  .header-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+
+  .contact-line {
+    font-family: var(--mono);
+    font-size: .8rem;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  .contact-line a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+    transition: color .2s;
+  }
+  .contact-line a:hover { color: var(--accent); }
+
+  /* ── SUMMARY STRIP ── */
+  .summary-strip {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--light-line);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+    align-items: start;
+    animation: fadeUp .8s .1s ease both;
+  }
+
+  .strip-label {
+    font-family: var(--mono);
+    font-size: .76rem;
+  }
+
+  .summary-text {
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+
+  /* ── MAIN GRID ── */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 0 48px;
+    margin-top: 0;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    display: contents;
+    animation: fadeUp .8s ease both;
+  }
+
+  .section-marker {
+    padding-top: 48px;
+    padding-bottom: 24px;
+    border-right: 1px solid var(--light-line);
+    padding-right: 24px;
+  }
+
+  .section-title {
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--muted);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    position: sticky;
+    top: 40px;
+  }
+
+  .section-title span {
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--accent);
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .section-content {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    border-top: 1px solid var(--light-line);
+  }
+
+  /* ── JOB ENTRY ── */
+  .job {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed var(--light-line);
+    opacity: 0;
+    animation: fadeUp .6s ease forwards;
+  }
+  .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+
+  .job-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: -.01em;
+    color: var(--ink);
+  }
+
+  .job-period {
+    font-family: var(--mono);
+    font-size: .76rem;
+  }
+
+  .job-company {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+
+  .job ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .job li {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink);
+    padding-left: 18px;
+    position: relative;
+  }
+
+  .job li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: .88rem;
+    top: 2px;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--light-line);
+  }
+  .edu-entry:first-child { padding-top: 0; }
+  .edu-entry:last-child { border-bottom: none; }
+
+  .edu-degree {
+    font-family: var(--sans);
+    font-size: .96rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .edu-school {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--accent);
+    font-size: .96rem;
+  }
+
+  .edu-year {
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: .78rem;
+    letter-spacing: .06em;
+    color: var(--ink);
+    border: 1px solid var(--light-line);
+    padding: 6px 12px;
+    transition: all .2s;
+    cursor: default;
+    background: transparent;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(196,98,45,.04);
+  }
+
+  .skill-tag.featured {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(196,98,45,.06);
+  }
+
+  .skills-category {
+    margin-bottom: 28px;
+  }
+  .skills-category:last-child { margin-bottom: 0; }
+
+  .skills-cat-label {
+    font-family: var(--mono);
+    font-size: .74rem;
+    color: var(--muted);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* ── CERTS ── */
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-size: .96rem;
+    font-weight: 300;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--light-line);
+  }
+  .cert-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .cert-name { flex: 1; }
+
+  .cert-org {
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  /* ── LANGUAGES ── */
+  .lang-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .lang-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lang-name {
+    font-family: var(--sans);
+    font-size: .96rem;
+    font-weight: 600;
+  }
+
+  .lang-level {
+    font-family: var(--mono);
+    font-size: .76rem;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--light-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-sig {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--muted);
+  }
+
+  .footer-meta {
+    font-family: var(--mono);
+    font-size: .74rem;
+    color: var(--muted);
+    letter-spacing: .08em;
+    text-align: right;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .job:nth-child(1) { animation-delay: .05s; }
+  .job:nth-child(2) { animation-delay: .12s; }
+  .job:nth-child(3) { animation-delay: .18s; }
+  .job:nth-child(4) { animation-delay: .24s; }
+  .job:nth-child(5) { animation-delay: .30s; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; font-size: 11pt; }
+    body::before { display: none; }
+    .page { padding: 0 32px 40px; max-width: none; }
+    header { padding: 40px 0 28px; }
+    .section-title { position: static; }
+    .job, .skill-tag { animation: none; opacity: 1; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 0 24px 60px; }
+    header { grid-template-columns: 1fr; }
+    .header-right { text-align: left; }
+    .summary-strip, .main-grid { grid-template-columns: 1fr; }
+    .section-marker { border-right: none; border-bottom: 1px solid var(--light-line); padding-right: 0; padding-bottom: 12px; }
+    .section-content { padding-top: 24px; border-top: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div>
+      <p class="header-label">UX Designer &amp; Design Strategy</p>
+      <h1>Ana Julia<br><em>Figueiredo</em></h1>
+    </div>
+    <div class="header-right">
+      <span class="contact-line"><a href="mailto:anajuliafsf@gmail.com">anajuliafsf@gmail.com</a></span>
+      <span class="contact-line">+55 11 97452-5248</span>
+      <span class="contact-line"><a href="https://linkedin.com/in/anafigueiredoux" target="_blank">linkedin.com/in/anafigueiredoux</a></span>
+      <span class="contact-line">Jundiaí, São Paulo — Brasil</span>
+    </div>
+  </header>
+
+  <!-- RESUMO -->
+  <div class="summary-strip">
+    <span class="strip-label">Sobre</span>
+    <p class="summary-text">
+      UX Designer com experiência em design estratégico, acessibilidade e sistemas de design,
+      aliando criatividade e pensamento analítico. Resultados comprovados na redução de tempo
+      de processos, melhoria de usabilidade e aumento de engajamento — impactando milhares
+      de usuários globalmente com soluções centradas no humano.
+    </p>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+    <!-- ── EXPERIÊNCIA ── -->
+    <section>
+      <div class="section-marker">
+        <div class="section-title"><span></span>Experiência</div>
+      </div>
+      <div class="section-content">
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">UX Designer</span>
+            <span class="job-period">Mai 2023 — Presente</span>
+          </div>
+          <div class="job-company">Accelera Technologies · EDP &amp; Comgás</div>
+          <ul>
+            <li>Projetei interfaces de baixa a alta fidelidade, melhorando a eficiência de navegação em <strong>30%</strong> (Google Analytics).</li>
+            <li>Desenvolvi e mantive Sistemas de Design adotados por <strong>3+ equipes</strong>, reduzindo o tempo de redesign em 25%.</li>
+            <li>Conduzi workshops de acessibilidade digital com <strong>20+ participantes</strong>, criando o primeiro guia de acessibilidade da empresa.</li>
+            <li>Alinhei estratégia de UX com objetivos de negócio em colaboração com equipes multidisciplinares.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">UX Designer</span>
+            <span class="job-period">Mai 2022 — Abr 2023</span>
+          </div>
+          <div class="job-company">InEvent</div>
+          <ul>
+            <li>Projetei interfaces responsivas e inclusivas para plataformas de eventos, impactando <strong>10k+ usuários</strong> em eventos internacionais.</li>
+            <li>Reduzi erros de design-to-code em <strong>15%</strong> apoiando conformidade com acessibilidade (W3C WAI).</li>
+            <li>Atuei em sprints ágeis com engenheiros, melhorando velocidade de entrega e qualidade das soluções.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">UX Designer</span>
+            <span class="job-period">Out 2021 — Mai 2022</span>
+          </div>
+          <div class="job-company">Freelancer</div>
+          <ul>
+            <li>Conduzi testes com usuários, iterando a partir de insights para melhorar índices de usabilidade.</li>
+            <li>Projetei websites e plataformas SaaS que aumentaram engajamento e conversão.</li>
+            <li>Garanti fidelidade na implementação dos designs em parceria com times de desenvolvimento.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Assistente Administrativa</span>
+            <span class="job-period">Jun 2010 — Mai 2022</span>
+          </div>
+          <div class="job-company">Prefeitura Municipal de Jundiaí</div>
+          <ul>
+            <li>Gerenciei contratos públicos de <strong>R$ 2M+</strong>, garantindo conformidade legal e prestação de contas.</li>
+            <li>Reduzi prazos de aprovação em <strong>15%</strong> por meio da otimização de processos.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Designer Gráfica</span>
+            <span class="job-period">Jan 2010 — Jun 2010</span>
+          </div>
+          <div class="job-company">Criarts</div>
+          <ul>
+            <li>Desenvolvi materiais visuais para impressão, apoiando orçamentos e cronogramas de produção.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── FORMAÇÃO ── -->
+    <section>
+      <div class="section-marker">
+        <div class="section-title"><span></span>Formação</div>
+      </div>
+      <div class="section-content">
+
+        <div class="edu-entry">
+          <div>
+            <div class="edu-degree">Pós-Graduação em Gestão Estratégica de Design</div>
+            <div class="edu-school">FAAP</div>
+          </div>
+          <div class="edu-year">2024 — 2025</div>
+        </div>
+
+        <div class="edu-entry">
+          <div>
+            <div class="edu-degree">Bacharelado em Arquitetura e Urbanismo</div>
+            <div class="edu-school">Universidade Paulista</div>
+          </div>
+          <div class="edu-year">2013 — 2017</div>
+        </div>
+
+        <div class="edu-entry">
+          <div>
+            <div class="edu-degree">Tecnólogo em Design Gráfico</div>
+            <div class="edu-school">Universidade Paulista</div>
+          </div>
+          <div class="edu-year">2010 — 2012</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── COMPETÊNCIAS ── -->
+    <section>
+      <div class="section-marker">
+        <div class="section-title"><span></span>Competências</div>
+      </div>
+      <div class="section-content">
+
+        <div class="skills-category">
+          <div class="skills-cat-label">Ferramentas</div>
+          <div class="skills-grid">
+            <span class="skill-tag featured">Figma</span>
+            <span class="skill-tag featured">Framer</span>
+            <span class="skill-tag">Miro</span>
+            <span class="skill-tag">Adobe XD</span>
+            <span class="skill-tag">Sketch</span>
+            <span class="skill-tag">Adobe Creative Suite</span>
+            <span class="skill-tag">HTML / CSS</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-cat-label">Práticas de UX</div>
+          <div class="skills-grid">
+            <span class="skill-tag featured">Design Systems</span>
+            <span class="skill-tag featured">Acessibilidade (A11y)</span>
+            <span class="skill-tag">Wireframing</span>
+            <span class="skill-tag">Prototipação</span>
+            <span class="skill-tag">Pesquisa com Usuários</span>
+            <span class="skill-tag">Testes de Usabilidade</span>
+            <span class="skill-tag">Avaliação Heurística</span>
+            <span class="skill-tag">Arquitetura da Informação</span>
+            <span class="skill-tag">Testes A/B</span>
+            <span class="skill-tag">Design Responsivo</span>
+            <span class="skill-tag">Mobile First</span>
+            <span class="skill-tag">WCAG &amp; W3C</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-cat-label">Estratégia &amp; Processo</div>
+          <div class="skills-grid">
+            <span class="skill-tag">Design Estratégico</span>
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Kanban</span>
+            <span class="skill-tag">Design Thinking</span>
+            <span class="skill-tag">Otimização de Conversão</span>
+            <span class="skill-tag">Gestão de Stakeholders</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── IDIOMAS ── -->
+    <section>
+      <div class="section-marker">
+        <div class="section-title"><span></span>Idiomas</div>
+      </div>
+      <div class="section-content">
+        <div class="lang-row">
+          <div class="lang-item">
+            <span class="lang-name">Português</span>
+            <span class="lang-level">Nativo</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Inglês</span>
+            <span class="lang-level">C2 Proficiente · EF SET 75/100</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICAÇÕES ── -->
+    <section>
+      <div class="section-marker">
+        <div class="section-title"><span></span>Certificações</div>
+      </div>
+      <div class="section-content">
+        <div class="cert-list">
+          <div class="cert-item">
+            <span class="cert-name">LGPD: Entendendo a Proteção de Dados Pessoais</span>
+            <span class="cert-org">Alura · 2025</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Figma Training</span>
+            <span class="cert-org">Alura · 2024</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">UX Research: Acessibilidade em Projetos Digitais</span>
+            <span class="cert-org">Alura · 2024</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">User Experience Design</span>
+            <span class="cert-org">Tera · 2022</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Enterprise Design Thinking Co-Creator &amp; Practitioner</span>
+            <span class="cert-org">IBM · 2021</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Scrum Foundation Professional Certificate (SFPC)</span>
+            <span class="cert-org">Certiprof · 2021</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Google UX Design Certificate</span>
+            <span class="cert-org">Coursera · 2021</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-name">Certificação em UX, UI e Product Design</span>
+            <span class="cert-org">UX Unicórnio · 2021</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /main-grid -->
+
+  <footer>
+    <span class="footer-sig">Ana Julia Figueiredo</span>
+    <div class="footer-meta">
+      <div>anajuliafsf@gmail.com</div>
+      <div>linkedin.com/in/anafigueiredoux</div>
+    </div>
+  </footer>
+
+</div><!-- /page -->
+</body>
+</html>
